@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Reset some default styles */
+html {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOz3MJmMiRtomLXw0OSk-b2RiO8otmRrIulWtCiPg-sX2SAtAAQZ_Bw3-Xy7TqxvcEojA&usqp=CAU");
+            background-position: centre;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+  
+}
+
+/* Style the container */
+.quiz-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px; /* Add perspective for 3D effect */
+    color: #fff;
+}
+
+/* Style the heading */
+h1 {
+    color: black;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Style the paragraph */
+p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Style the start button */
+.start-button {
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.start-button:hover {
+    background-color: #27ae60;
+}
+
+/* Add a 3D flip animation to the button */
+.start-button:active {
+    transform: scale(0.9);
+    transition: transform 0.1s;
+}
+
+/* Define the 3D transformation */
+.quiz-container {
+    transform-style: preserve-3d;
+    transform: rotateX(30deg);
+}
+
+/* Add a shadow to the container for depth */
+.quiz-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>3D Quiz Homepage</title>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 style="font-family: cursive">
+            COLOURFUL VISION QUIZ
+    </h1>
+        <a href="http://localhost:3000/quiz">
+        <button class="start-button" onclick="startQuiz()">Start Quiz</button>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="">
+
+</head>
+<style>
+    
+
+
+
+/* index.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff; /* White background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 2000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fee6ca; /* Light pastel brown container background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transform: rotateX(5deg) rotateY(5deg);
+}
+
+h1 {
+    color: #8b5a2b; /* Pastel brown heading color */
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #7d4f32; /* Slightly darker pastel brown label color */
+}
+
+input {
+    width: calc(50% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #b08863; /* Light pastel brown border */
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+select, button {
+    width: 20%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #8b5a2b; /* Slightly darker pastel brown border */
+    border-radius: 4px;
+    color: #ffffff; /* White text color */
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+select {
+    background-color: #8b5a2b; /* Slightly darker pastel brown background for select */
+}
+
+button {
+    background-color: #c09a73; /* Lighter pastel brown button background */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a18260; /* Darker pastel brown on hover */
+}
+
+iframe {
+    border: 1px solid #b08863; /* Light pastel brown border for iframe */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+/* Light blue added */
+.container-light-blue {
+    background-color: #c3e6f5; /* Light blue container background */
+    color: #1c5c8e; /* Darker blue text color */
+    border: 1px solid #1c5c8e; /* Darker blue border */
+}
+/* Protanopia Filter */
+.protanopia {
+    filter: url(#protanopia);
+}
+
+/* Deuteranopia Filter */
+.deuteranopia {
+    filter: url(#deuteranopia);
+}
+
+/* Tritanopia Filter */
+.tritanopia {
+    filter: url(#tritanopia);
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>Color Blindness Filter</h1>
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" placeholder="Enter a URL">
+        <select id="filterType">
+            <option value="normal">Normal</option>
+            <option value="protanopia">Protanopia</option>
+            <option value="deuteranopia">Deuteranopia</option>
+            <option value="tritanopia">Tritanopia</option>
+        </select>
+        <button onclick="applyFilter()">Apply Filter</button>
+    </div>
+    <iframe id="filteredPage" class="filtered-page" width="1500" height="600"></iframe>
+    
+    <!-- Include the SVG section here -->
+    <svg style="display: none;">
+        <filter id="protanopia">
+            <feColorMatrix type="matrix"
+                values="0.567, 0.433, 0, 0, 0
+                        0.558, 0.442, 0, 0, 0
+                        0, 0.242, 0.758, 0, 0
+                        0, 0, 0, 1, 0" />
+        </filter>
+        <filter id="deuteranopia">
+            <feColorMatrix type="matrix"
+                values="0.625, 0.375, 0, 0, 0
+                        0.7, 0.3, 0, 0, 0
+                        0, 0.3, 0.7, 0, 0
+                        0, 0, 0, 1, 0" />
+        </filter>
+    
+        <filter id="tritanopia">
+            <feColorMatrix type="matrix"
+                values="0.95, 0.05, 0, 0, 0
+                        0, 0.433, 0.567, 0, 0
+                        0, 0.475, 0.525, 0, 0
+                        0, 0, 0, 1, 0" />
+        </filter>
+        
+        <!-- Define filters for deuteranopia, tritanopia, etc., if needed -->
+    </svg>
+
+    <script>
+        function applyFilter() {
+    const url = document.getElementById('url').value;
+    const filteredPage = document.getElementById('filteredPage');
+    const filterType = document.getElementById('filterType').value;
+
+    if (url) {
+        filteredPage.src = url;
+        filteredPage.className = `filtered-page ${filterType}`;
+        filteredPage.style.display = 'block';
+    } else {
+        alert('Please enter a valid URL.');
+    }
+}
+    </script>
+</body>
+</html>

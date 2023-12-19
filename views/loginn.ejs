@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login | By Code Info</title>
+    <link rel="stylesheet" href="Css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+        
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPwiFJg7mb6n1fC6QqlIhWTU3EwMagaIcAPw&usqp=CAU);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 50% 100%;
+}
+
+.signup-box {
+  width: 360px;
+  height: 620px;
+  margin: auto;
+  background-color: rgb(215, 231, 235);
+  border-radius: 3px;
+}
+
+.login-box {
+  width: 360px;
+  height: 360px;
+  margin: auto;
+  border-radius: 3px;
+  background-color: rgb(215, 231, 235);
+  padding: 25px;  
+
+}
+
+h1 {
+  text-align: center;
+  padding-top: 15px;
+  font-family: cursive;
+}
+
+h4 {
+  text-align: center;
+  font-family: cursive;
+}
+
+form {
+  width: 300px;
+  margin-left: 20px;
+  font-family: cursive;
+}
+
+form label {
+  display: flex;
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: cursive;
+}
+
+form input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border: 1px solid rgb(84, 128, 139);
+  border-radius: 6px;
+  outline: none;
+  font-family: cursive;
+}
+input[type="button"] {
+  width: 320px;
+  height: 35px;
+  margin-top: 20px;
+  border: none;
+  background-color: #49c1a2;
+  color: rgb(193, 116, 116);
+  font-size: 18px;
+  font-family: cursive;
+}
+p {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 15px;
+  font-family: cursive;
+}
+.para-2 a {
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  margin-top: -10px;
+  font-family: cursive;
+}
+.para-2 a {
+  color: #49c1a2;
+  font-family: cursive;
+}
+
+
+  </style>
+  <body>
+    <div class="login-box">
+      <h1>Login</h1>
+      <form action="/loginsubmit" method="GET">
+        <label>name</label>
+        <input type="name" name="name" placeholder="Name" />
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Password" />
+        <button type="submit">log in</button>   
+            <input type="checkbox" checked="checked"> Remember me   
+            <button type="button" class="cancelbtn"> Cancel</button>   
+            Forgot <a href="#"> password? </a>
+      <closeform></closeform></form>
+    </div>
+    <p class="para-2">
+      If your new then <a href="http://localhost:3000/signupp">Sign Up</a>
+    </p>
+  </body>
+</html>

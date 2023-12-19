@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+        body {
+  
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPwiFJg7mb6n1fC6QqlIhWTU3EwMagaIcAPw&usqp=CAU);
+            background-position: centre;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 50% 100%;
+  
+}
+
+.signup-box {
+  width: 360px;
+  height: 700px;
+  margin: auto;
+  background-color: rgb(215, 231, 235);
+  border-radius: 3px;
+}
+
+.login-box {
+  width: 360px;
+  height: 280px;
+  margin: auto;
+  border-radius: 3px;
+  background-color: rgb(215, 231, 235);
+}
+
+h1 {
+  text-align: center;
+  padding-top: 15px;
+}
+
+h4 {
+  text-align: center;
+}
+
+form {
+  width: 300px;
+  margin-left: 10px;
+  font-family: cursive;
+}
+
+form label {
+  display: flex;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+form input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+  font-family: cursive;
+}
+input[type="button"] {
+  width: 320px;
+  height: 35px;
+  margin-top: 20px;
+  border: none;
+  background-color: #49c1a2;
+  color: white;
+  font-size: 18px;
+  font-family: cursive;
+}
+
+p {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 15px;
+}
+.para a {
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  margin-top: -10px;
+}
+.para a {
+  color: #49c1a2;
+}
+
+
+    </style>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="Css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1 style="font-family: cursive";>Sign Up</h1>
+      <h4 style="font-family: cursive">If your new then sign up</h4>
+      <form action="/signupsubmit" method="GET">
+        <label style="font-family: cursive">Name</label>
+        <input type="text" name="name" placeholder="Name" />
+        <label style="font-family: cursive">Email</label>
+        <input type="email" name="email" placeholder="Email" />
+        <label style="font-family: cursive">Password</label>
+        <input type="password" name="password" placeholder="Password" />
+        <label style="font-family: cursive">Confirm Password</label>
+        <input type="password" name="confirmpassword" placeholder="Confirm Password" />
+        <button type="submit" style="font-family: cursive">signup</button>   
+            <input type="checkbox" checked="checked"> Remember me   
+            <button type="button" class="cancelbtn" style="font-family: cursive"> Cancel</button>   
+            Forgot <a href="#"> password? </a>
+      <closeform></closeform></form>
+      <p style="font-family: cursive">
+        By clicking the Sign Up button,you agree to our <br>
+        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+      </p>
+    </div>
+    <p class="para" style="font-family: cursive">
+      Already have an account? <a href="http://localhost:3000/loginn">Login</a>
+    </p>
+  </body>
+</html>
